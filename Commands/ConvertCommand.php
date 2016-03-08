@@ -58,8 +58,6 @@ class ConvertCommand extends Command
             $filename = 'Transacties.TXT';
         }
 
-        $filename = getcwd() . '/' . $filename;
-
         // Read file
         $output->writeln('Parsing file: ' . $filename . '...');
 
