@@ -166,7 +166,9 @@ class ConvertCommand extends Command
         $outFile = sprintf('export_ing_card_%s.940', date('ymd', $dateFromTs));
         file_put_contents($outFile, $export);
 
+        $actualFile = getcwd() . '/' . $outFile;
+
         $output->writeln('');
-        $output->writeln('Wrote export file: ' . $outFile);
+        $output->writeln("<info>Wrote export file: {$actualFile}</info>");
     }
 }
