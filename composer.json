@@ -1,6 +1,6 @@
 {
-  "name": "softwarepunt/ingmt940",
-  "description": "Converts CSV data to MoneyBird-compatible MT940 format",
+  "name": "softwarepunt/php-mt940",
+  "description": "💸 Command line tool and PHP library for converting to and from MT940 format bank transaction files. 💳 Supports input from ING Commercial Cards (ingbanknetservice)!",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
