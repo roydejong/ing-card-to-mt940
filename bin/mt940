@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+
+echo "MT940 bin stub." . PHP_EOL;

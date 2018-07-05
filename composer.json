@@ -1,5 +1,5 @@
 {
-  "name": "softwarepunt/php-mt940",
+  "name": "roydejong/mt940",
   "description": "💸 Command line tool and PHP library for converting to and from MT940 format bank transaction files. 💳 Supports input from ING Commercial Cards (ingbanknetservice)!",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -9,10 +9,16 @@
       "email": "roy@softwarepunt.nl"
     }
   ],
-  "require": {
-    "symfony/console": "^3.0"
-  },
   "autoload": {
-    "psr-4": { "SoftwarePunt\\IngCard\\": "" }
+    "psr-4": {
+      "MT940\\": "lib/",
+      "MT940\\Tests\\": "tests/"
+    }
+  },
+  "bin": [
+    "bin/mt940"
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
   }
 }

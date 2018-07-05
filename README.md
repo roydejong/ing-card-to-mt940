@@ -1,49 +1,34 @@
-ingbanknetservice CSV -> ING MT940
-===
+# mt940
 
-What?
----
+**mt940 is a PHP-based library and command line tool that can parse transaction files and convert them to compatible MT940 formats.**
 
-**Convert a CSV file, exported from ING Banknet Service (ingbanknetservice.nl), to MT940 format.**
+## Features
 
-It currently converts the following information into the MT940 file:
+- Integrate as a PHP library, or install globally to use it as a command line tool.
+- Convert to a variety of supported MT940 formats.
+- Parse input from various file formats like ING Commercial Card CSV files.
 
-- Transaction dates
-- Transaction booking dates
-- Transaction amounts
-- Credit card transaction references
-- Recipient (names only)
+### MT940 Format compatibility
 
-Why?
----
-We needed MT940 format to import into our bookkeeping software (MoneyBird) to process bank mutations. ING does not currently support this for their business cards.
+The following MT940 formats are currently supported by this library:
 
-How?
----
-If you have an ING Business Card, this utility can work for you.
+|Identifier|Standard|Institution|Reference version|
+|---|---|---|---|
+|`mt940`|Standalone [MT 940 Customer Statement Message](https://www2.swift.com/mystandards/#/mt/2017.November/940/940!content)|SWIFT|SR 2017 (September 2017)|
+|`mt940-ing`|SWIFT Message [MT940 / MT942 Structured NL](https://www.ing.nl/media/ING-Format-Description-MT940-MT942-Structured-NL-v5.4_tcm162-105412.pdf)|ING Bank Nederland|v5.4 (01-08-2016)|
 
-**To export the CSV:**
+## Installation 
 
-1. If you haven't done so already, create an account on ingbanknetservice.nl
-2. Sign in and select your card. Go to the "Transactions" tab.
-3. Select a period, pick the comma-seperated (*Door komma's gescheiden tekst*) file format, and click "Download"
- 
-**To use this utility:**
+To install as a **library** for integration in to your project, add it as a dependency:
 
-1. Download or clone the repository contents
-2. Run ``composer install`` from the terminal to install dependencies
-3. Execute the command: `php convert.php convert [<filename>] [<iban>]`
+    composer require roydejong/mt940
+    
+To install globally as a **command-line tool** on your system, install it as a global composer package:
 
-**Parameters:**
-All parameters are optional.
+    composer install --global roydejong/mt940
 
-- ``filename``: A custom filename. Defaults to `Transacties.TXT`. Relative to the current working directory.
-- ``iban``: A custom IBAN that will be used to identify your credit card, if useful to you. Defaults to `NL24INGB0001111111`.
+## Usage as a library
 
-Notes
----
 
-- You'll need [composer](https://getcomposer.org/download/) and [php-cli](https://www.google.nl/search?q=install+php+cli) installed to use this tool.
-- The exported MT940 is not perfect. Some fields are not correctly formatted (such as the counterparty data), and e.g. the final SUM is missing. But it works for our purposes.
-- Both a starting and final balance of €0 is reported.
-- [MT940 format specifications](https://www.ing.nl/media/ING_ming_mt940s_24_juli_tcm162-46356.pdf)
+
+## Usage on the command line
