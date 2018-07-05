@@ -1,5 +1,7 @@
 # mt940
 
+[![Build Status](https://travis-ci.org/roydejong/ing-card-to-mt940.svg?branch=master)](https://travis-ci.org/roydejong/ing-card-to-mt940)
+
 **mt940 is a PHP-based library and command line tool that can parse transaction files and convert them to compatible MT940 formats.**
 
 ## Features
